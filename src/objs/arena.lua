@@ -8,7 +8,13 @@ function Arena:load()
       height = love.graphics.getHeight()
   }
   
-  self.Divider = {}
+  self.Divider = {
+      x = love.graphics.getWidth() / 2,
+      y = 0,
+      width = 10,
+      height = love.graphics.getHeight()
+  }
+  
   self.Center = {}
 end
 
@@ -22,6 +28,9 @@ function Arena:draw()
   love.graphics.setColor(0, 1, 0)
   love.graphics.rectangle("fill", self.Goal.x, self.Goal.y, self.Goal.width, self.Goal.height)
   love.graphics.rectangle("fill", love.graphics.getWidth() - self.Goal.width, self.Goal.y, self.Goal.width, self.Goal.height)
+  
+  love.graphics.setColor(0.5, 0.5, 0.5)
+  love.graphics.rectangle("fill", self.Divider.x, self.Divider.y, self.Divider.width, self.Divider.height)
 end
 
 return Arena
