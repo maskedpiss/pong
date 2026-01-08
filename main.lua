@@ -12,6 +12,7 @@ function love.load()
   
   Globals.Paddle = require("src/objs/paddle")
   playerOne = Globals.Paddle.new(50, love.graphics.getHeight() / 2)
+  playerTwo = Globals.Paddle.new(love.graphics.getWidth() - 70, love.graphics.getHeight() / 2)
   
   Globals.Ball = require("src/objs/ball")
   Globals.Ball:load()
@@ -20,6 +21,7 @@ end
 
 function love.update(dt)
   playerOne:update(dt)
+  playerTwo:update(dt)
   Globals.Ball:update(dt)
 end
 
@@ -27,5 +29,6 @@ end
 function love.draw()
   Globals.Arena:draw()
   playerOne:draw()
+  playerTwo:draw()
   Globals.Ball:draw()
 end
