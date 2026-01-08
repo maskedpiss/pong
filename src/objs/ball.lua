@@ -14,6 +14,10 @@ end
 function Ball:update(dt)
   self.x = self.x + self.xVel * dt
   self.y = self.y + self.yVel * dt
+  
+  if Globals.Collisions:AABB(self, Globals.Paddle) then
+    self.xVel = -self.xVel
+  end
 end
 
 
