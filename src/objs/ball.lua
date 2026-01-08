@@ -22,6 +22,16 @@ function Ball:update(dt)
     local collisionPosition = middleBall - middlePaddle
     self.yVel = collisionPosition * 5
   end
+  
+  if self.y < 0 then
+    self.y = 0
+    self.yVel = -self.yVel
+  end
+  
+  if self.y + self.height > love.graphics.getHeight() then
+    self.y = love.graphics.getHeight() - self.height
+    self.yVel = -self.yVel
+  end
 end
 
 
