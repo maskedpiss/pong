@@ -4,12 +4,14 @@ Globals.Paddle = nil
 Globals.Ball = nil
 Globals.Collisions = require("src/utils/collisions")
 
+playerOne = nil
+
 function love.load()
   Globals.Arena = require("src/objs/arena")
   Globals.Arena:load()
   
   Globals.Paddle = require("src/objs/paddle")
-  Globals.Paddle:load()
+  playerOne = Globals.Paddle.new(50, love.graphics.getHeight() / 2)
   
   Globals.Ball = require("src/objs/ball")
   Globals.Ball:load()
@@ -17,13 +19,13 @@ end
 
 
 function love.update(dt)
-  Globals.Paddle:update(dt)
+  playerOne:update(dt)
   Globals.Ball:update(dt)
 end
 
 
 function love.draw()
   Globals.Arena:draw()
-  Globals.Paddle:draw()
+  playerOne:draw()
   Globals.Ball:draw()
 end

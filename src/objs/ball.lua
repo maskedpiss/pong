@@ -15,10 +15,10 @@ function Ball:update(dt)
   self.x = self.x + self.xVel * dt
   self.y = self.y + self.yVel * dt
   
-  if Globals.Collisions:AABB(self, Globals.Paddle) then
+  if Globals.Collisions:AABB(self, playerOne) then
     self.xVel = -self.xVel
     local middleBall = self.y + self.height / 2
-    local middlePaddle = Globals.Paddle.y + Globals.Paddle.height / 2
+    local middlePaddle = playerOne.y + playerOne.height / 2
     local collisionPosition = middleBall - middlePaddle
     self.yVel = collisionPosition * 5
   end

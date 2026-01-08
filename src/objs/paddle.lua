@@ -1,11 +1,16 @@
 local Paddle = {}
 
-function Paddle:load()
-  self.x = 50
-  self.y = love.graphics.getHeight() / 2
-  self.width = 20
-  self.height = 100
-  self.speed = 500
+function Paddle.new(x, y)
+  local instance = {}
+  setmetatable(instance, { __index = Paddle })
+  
+  instance.x = x
+  instance.y = y
+  instance.width = 20
+  instance.height = 100
+  instance.speed = 500
+  
+  return instance
 end
 
 
