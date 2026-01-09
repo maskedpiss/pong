@@ -2,6 +2,7 @@ Globals = {}
 Globals.Arena = nil
 Globals.Paddle = nil
 Globals.Ball = nil
+Globals.Button = nil
 Globals.Collisions = require("src/utils/collisions")
 Globals.playerOneScore = 0
 Globals.playerTwoScore = 0
