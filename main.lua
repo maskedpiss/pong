@@ -9,7 +9,7 @@ Globals.playerTwoScore = 0
 GameState = {
     current = nil,
     state = {
-        menu = nil
+        menu = require("src/states/menu")
     }
 }
 
@@ -27,7 +27,7 @@ end
 
 
 function love.load()
-  
+  GameState:changeState("menu")
 end
 
 
