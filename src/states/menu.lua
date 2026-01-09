@@ -10,13 +10,23 @@ function Menu.onEnter()
   }
   
   Globals.Button = require("src/objs/button")
-  playButton = Globals.Button.new("Play", love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
+  playButton = Globals.Button.new("Play", love.graphics.getWidth() / 2, love.graphics.getHeight() / 2, function()
+      GameState:changeState("play")
+  end)
+  
   exitButton = Globals.Button.new("Exit", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 100)
 end
 
 
 function Menu.update(dt)
   
+end
+
+
+function Menu.mousepressed(x, y, button)
+  if playButton:mousepressed(x, y, button) then
+    return
+  end
 end
 
 
