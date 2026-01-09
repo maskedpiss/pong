@@ -42,7 +42,7 @@ function Ball:update(dt)
   end
   
   if self.x < 0 or self.x > love.graphics.getWidth() then
-    self:reset()
+    self:checkScore()
   end
   
   if self.y < 0 then
@@ -60,6 +60,16 @@ end
 function Ball:draw()
   love.graphics.setColor(1, 1, 1)
   love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+end
+
+
+function Ball:checkScore()
+  if self.x + self.width < 0 then
+    return true, 2
+  elseif self.x > love.graphics.getWidth() then
+    return true, 1
+  end
+  return false, nil
 end
 
 return Ball

@@ -48,8 +48,8 @@ function Arena:draw()
   love.graphics.setColor(1, 1, 1)
   love.graphics.setFont(self.ScoreBoard.font)
   
-  love.graphics.print(0, self.ScoreBoard.x, self.ScoreBoard.y)
-  love.graphics.print(0, (love.graphics.getWidth() - self.ScoreBoard.x) - 64, self.ScoreBoard.y)
+  love.graphics.print(Globals.playerOneScore, self.ScoreBoard.x, self.ScoreBoard.y)
+  love.graphics.print(Globals.playerTwoScore, (love.graphics.getWidth() - self.ScoreBoard.x) - 64, self.ScoreBoard.y)
 end
 
 return Arena
