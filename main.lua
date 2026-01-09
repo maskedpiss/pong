@@ -32,10 +32,14 @@ end
 
 
 function love.update(dt)
-  
+  if GameState.current and GameState.current.update then
+    GameState.current.update(dt)
+  end
 end
 
 
 function love.draw()
-  
+  if GameState.current and GameState.current.draw then
+    GameState.current.draw()
+  end
 end
