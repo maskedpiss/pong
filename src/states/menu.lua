@@ -14,7 +14,9 @@ function Menu.onEnter()
       GameState:changeState("play")
   end)
   
-  exitButton = Globals.Button.new("Exit", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 100)
+  exitButton = Globals.Button.new("Exit", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 100, function()
+      love.event.quit()
+  end)
 end
 
 
@@ -25,6 +27,10 @@ end
 
 function Menu.mousepressed(x, y, button)
   if playButton:mousepressed(x, y, button) then
+    return
+  end
+  
+  if exitButton:mousepressed(x, y, button) then
     return
   end
 end
