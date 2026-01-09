@@ -6,42 +6,36 @@ Globals.Collisions = require("src/utils/collisions")
 Globals.playerOneScore = 0
 Globals.playerTwoScore = 0
 
-playerOne = nil
+GameState = {
+    current = nil,
+    state = {
+        menu = nil
+    }
+}
 
-function love.load()
-  Globals.Arena = require("src/objs/arena")
-  Globals.Arena:load()
+function GameState:changeState(newState)
+  if GameState.current and GameState.current.onExit then
+    GameState.current.onExit()
+  end
   
-  Globals.Paddle = require("src/objs/paddle")
-  playerOne = Globals.Paddle.new(50, love.graphics.getHeight() / 2)
-  playerTwo = Globals.Paddle.new(love.graphics.getWidth() - 70, love.graphics.getHeight() / 2)
+  GameState.current = GameState.state[newState]
   
-  Globals.Ball = require("src/objs/ball")
-  gameBall = Globals.Ball.new()
-end
-
-
-function love.update(dt)
-  playerOne:update(dt)
-  playerTwo:update(dt)
-  gameBall:update(dt)
-  
-  local scored, scorer = gameBall:checkScore()
-  if scored then
-    if scorer == 1 then
-      Globals.playerOneScore = Globals.playerOneScore + 1
-    elseif scorer == 2 then
-      Globals.playerTwoScore = Globals.playerTwoScore + 1
-    end
-    
-    gameBall:reset()
+  if GameState.current and GameState.current.onEnter then
+    GameState.current.onEnter()
   end
 end
 
 
+function love.load()
+  
+end
+
+
+function love.update(dt)
+  
+end
+
+
 function love.draw()
-  Globals.Arena:draw()
-  playerOne:draw()
-  playerTwo:draw()
-  gameBall:draw()
+  
 end
