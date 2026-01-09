@@ -10,7 +10,8 @@ Globals.playerTwoScore = 0
 GameState = {
     current = nil,
     state = {
-        menu = require("src/states/menu")
+        menu = require("src/states/menu"),
+        play = require("src/states/play")
     }
 }
 
