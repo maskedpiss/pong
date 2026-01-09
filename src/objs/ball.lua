@@ -41,6 +41,10 @@ function Ball:update(dt)
     self.yVel = collisionPosition * 5
   end
   
+  if self.x < 0 or self.x > love.graphics.getWidth() then
+    self:reset()
+  end
+  
   if self.y < 0 then
     self.y = 0
     self.yVel = -self.yVel
