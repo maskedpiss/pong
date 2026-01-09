@@ -1,6 +1,7 @@
 local Menu = {}
 
 local playButton = nil
+local exitButton = nil
 
 function Menu.onEnter()
   Menu.Title = {
@@ -10,6 +11,7 @@ function Menu.onEnter()
   
   Globals.Button = require("src/objs/button")
   playButton = Globals.Button.new("Play", love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
+  exitButton = Globals.Button.new("Exit", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 100)
 end
 
 
@@ -24,6 +26,7 @@ function Menu.draw()
   love.graphics.printf(Menu.Title.text, 0, 100, love.graphics.getWidth(), "center")
   
   playButton:draw()
+  exitButton:draw()
 end
 
 
