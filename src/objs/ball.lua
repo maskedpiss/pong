@@ -1,6 +1,16 @@
 local Ball = {}
 
-function Ball:load()
+function Ball.new()
+  local instance = {}
+  setmetatable(instance, { __index = Ball })
+  
+  instance:reset()
+  
+  return instance
+end
+
+
+function Ball:reset()
   self.x = love.graphics.getWidth() / 2
   self.y = love.graphics.getHeight() / 2
   self.width = 20
