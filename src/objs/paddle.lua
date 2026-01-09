@@ -15,9 +15,20 @@ end
 
 
 function Paddle:update(dt)
-  if love.keyboard.isDown("w") then
+  local upKey, downKey
+  local screenCenter = love.graphics.getWidth() / 2
+  
+  if self.x < screenCenter then
+    upKey = "w"
+    downKey = "s"
+  elseif self.x > screenCenter then
+    upKey = "up"
+    downKey = "down"
+  end
+  
+  if love.keyboard.isDown(upKey) then
     self.y = self.y - self.speed * dt
-  elseif love.keyboard.isDown("s") then
+  elseif love.keyboard.isDown(downKey) then
     self.y = self.y + self.speed * dt
   end
   
