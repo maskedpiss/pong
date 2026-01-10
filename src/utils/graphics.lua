@@ -12,7 +12,8 @@ end
 
 function Graphics:loadFonts()
   self.Fonts = {
-      TitleFont = love.graphics.newFont("res/fonts/Blippo Bold.ttf", 128)
+      TitleFont = love.graphics.newFont("res/fonts/Blippo Bold.ttf", 128),
+      ButtonFont = love.graphics.newFont("res/fonts/Blippo Bold.ttf", 32)
   }
 end
 
