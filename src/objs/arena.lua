@@ -36,16 +36,16 @@ end
 
 
 function Arena:draw()
-  love.graphics.setColor(0, 1, 0)
+  love.graphics.setColor(Globals.Graphics.Colors.green)
   love.graphics.rectangle("fill", self.Goal.x, self.Goal.y, self.Goal.width, self.Goal.height)
   love.graphics.rectangle("fill", love.graphics.getWidth() - self.Goal.width, self.Goal.y, self.Goal.width, self.Goal.height)
   
-  love.graphics.setColor(0.5, 0.5, 0.5)
+  love.graphics.setColor(Globals.Graphics.Colors.gray)
   love.graphics.rectangle("fill", self.Divider.x - self.Divider.offset, self.Divider.y, self.Divider.width, self.Divider.height)
   
   love.graphics.circle("line", self.Center.x, self.Center.y, self.Center.radius)
   
-  love.graphics.setColor(1, 1, 1)
+  love.graphics.setColor(Globals.Graphics.Colors.white)
   love.graphics.setFont(self.ScoreBoard.font)
   
   love.graphics.print(Globals.playerOneScore, self.ScoreBoard.x, self.ScoreBoard.y)

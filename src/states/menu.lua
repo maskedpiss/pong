@@ -37,7 +37,7 @@ end
 
 
 function Menu.draw()
-  love.graphics.setColor(1, 1, 1)
+  love.graphics.setColor(Globals.Graphics.Colors.white)
   love.graphics.setFont(Menu.Title.font)
   love.graphics.printf(Menu.Title.text, 0, 100, love.graphics.getWidth(), "center")
   

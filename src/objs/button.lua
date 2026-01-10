@@ -39,10 +39,10 @@ end
 
 
 function Button:draw()
-  love.graphics.setColor(1, 1, 1)
+  love.graphics.setColor(Globals.Graphics.Colors.white)
   love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
   
-  love.graphics.setColor(0, 0, 0)
+  love.graphics.setColor(Globals.Graphics.Colors.black)
   love.graphics.setFont(buttonFont)
   love.graphics.printf(self.text, self.x, self.y, self.width, "center")
 end
