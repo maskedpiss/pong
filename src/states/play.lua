@@ -53,6 +53,10 @@ function Play.update(dt)
     
     gameBall:reset()
   end
+  
+  if Globals.playerOneScore > 9 or Globals.playerTwoScore > 9 then
+    GameState:changeState("gameOver")
+  end
 end
 
 
