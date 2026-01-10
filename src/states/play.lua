@@ -13,9 +13,9 @@ function Play.onEnter()
   Globals.Arena:load()
   
   playerOneX = 50
-  playerOneY = love.graphics.getHeight() / 2
-  playerTwoX = love.graphics.getWidth() - 70
-  playerTwoY = love.graphics.getHeight() / 2
+  playerOneY = Globals.Screen.height / 2
+  playerTwoX = Globals.Screen.width - 70
+  playerTwoY = Globals.Screen.height / 2
   
   Globals.Paddle = require("src/objs/paddle")
   playerOne = Globals.Paddle.new(playerOneX, playerOneY)
