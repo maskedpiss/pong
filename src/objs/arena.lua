@@ -25,7 +25,7 @@ function Arena:load()
   self.ScoreBoard = {
       x = 300,
       y = 100,
-      font = love.graphics.newFont(64)
+      font = Globals.Graphics.Fonts.ScoreFont
   }
 end
 

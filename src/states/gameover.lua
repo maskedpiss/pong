@@ -6,7 +6,7 @@ local exitButton = nil
 
 function GameOver.onEnter()
   GameOver.Message = {
-      font = love.graphics.newFont(128),
+      font = Globals.Graphics.Fonts.TitleFont,
       x = 0,
       y = 100,
       text = "Game Over!"
