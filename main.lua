@@ -39,6 +39,7 @@ function love.load()
   }
   
   Globals.Graphics:loadGraphics()
+  Globals.Graphics:loadFonts()
   GameState:changeState("menu")
 end
 

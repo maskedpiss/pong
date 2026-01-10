@@ -9,4 +9,11 @@ function Graphics:loadGraphics()
   }
 end
 
+
+function Graphics:loadFonts()
+  self.Fonts = {
+      TitleFont = love.graphics.newFont("res/fonts/Blippo Bold.ttf", 128)
+  }
+end
+
 return Graphics
