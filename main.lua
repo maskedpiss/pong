@@ -31,6 +31,13 @@ end
 
 
 function love.load()
+  Globals.Screen = {
+      x = 0,
+      y = 0,
+      width = love.graphics.getWidth(),
+      height = love.graphics.getHeight()
+  }
+  
   Globals.Graphics:loadGraphics()
   GameState:changeState("menu")
 end
