@@ -1,5 +1,7 @@
 local Button = {}
 
+Button.offset = 87.5
+
 function Button.new(text, x, y, callback)
   local instance = {}
   setmetatable(instance, { __index = Button })
