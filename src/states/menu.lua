@@ -5,7 +5,7 @@ local exitButton = nil
 
 function Menu.onEnter()
   Menu.Title = {
-      font = love.graphics.newFont(128),
+      font = Globals.Graphics.Fonts.TitleFont,
       text = "Pong"
   }
   
