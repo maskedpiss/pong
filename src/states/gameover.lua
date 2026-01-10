@@ -65,7 +65,8 @@ end
 
 
 function GameOver.onExit()
-  
+  Globals.playerOneScore = 0
+  Globals.playerTwoScore = 0
 end
 
 return GameOver
