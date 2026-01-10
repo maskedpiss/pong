@@ -11,8 +11,8 @@ end
 
 
 function Ball:reset()
-  self.x = love.graphics.getWidth() / 2
-  self.y = love.graphics.getHeight() / 2
+  self.x = Globals.Screen.width / 2
+  self.y = Globals.Screen.height / 2
   self.width = 20
   self.height = 20
   self.speed = 200
@@ -25,7 +25,7 @@ function Ball:update(dt)
   self.x = self.x + self.xVel * dt
   self.y = self.y + self.yVel * dt
   
-  if self.x < 0 or self.x > love.graphics.getWidth() then
+  if self.x < 0 or self.x > Globals.Screen.width then
     self:checkScore()
   end
   
@@ -34,8 +34,8 @@ function Ball:update(dt)
     self.yVel = -self.yVel
   end
   
-  if self.y + self.height > love.graphics.getHeight() then
-    self.y = love.graphics.getHeight() - self.height
+  if self.y + self.height > Globals.Screen.height then
+    self.y = Globals.Screen.height - self.height
     self.yVel = -self.yVel
   end
 end
@@ -50,7 +50,7 @@ end
 function Ball:checkScore()
   if self.x + self.width < 0 then
     return true, 2
-  elseif self.x > love.graphics.getWidth() then
+  elseif self.x > Globals.Screen.width then
     return true, 1
   end
   return false, nil
