@@ -19,15 +19,15 @@ function GameOver.onEnter()
   end
   
   Globals.Button = require("src/objs/button")
-  menuButton = Globals.Button.new("Menu", love.graphics.getWidth() / 2, love.graphics.getHeight() / 2, function()
+  menuButton = Globals.Button.new("Menu", Globals.Screen.width / 2, Globals.Screen.height / 2, function()
       GameState:changeState("menu")
   end)
 
-  retryButton = Globals.Button.new("Retry", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 100, function()
+  retryButton = Globals.Button.new("Retry", Globals.Screen.width / 2, (Globals.Screen.height / 2) + 100, function()
       GameState:changeState("play")
   end)
 
-  exitButton = Globals.Button.new("Exit", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 200, function()
+  exitButton = Globals.Button.new("Exit", Globals.Screen.width / 2, (Globals.Screen.height / 2) + 200, function()
       love.event.quit()
   end)
 end
