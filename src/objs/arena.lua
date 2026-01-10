@@ -5,20 +5,20 @@ function Arena:load()
       x = 0,
       y = 0,
       width = 30,
-      height = love.graphics.getHeight()
+      height = Globals.Screen.height
   }
   
   self.Divider = {
-      x = love.graphics.getWidth() / 2,
+      x = Globals.Screen.width / 2,
       y = 0,
       width = 10,
-      height = love.graphics.getHeight(),
+      height = Globals.Screen.height,
       offset = 5
   }
   
   self.Center = {
-      x = love.graphics.getWidth() / 2,
-      y = love.graphics.getHeight() / 2,
+      x = Globals.Screen.width / 2,
+      y = Globals.Screen.height / 2,
       radius = 100
   }
   
