@@ -10,11 +10,11 @@ function Menu.onEnter()
   }
   
   Globals.Button = require("src/objs/button")
-  playButton = Globals.Button.new("Play", love.graphics.getWidth() / 2, love.graphics.getHeight() / 2, function()
+  playButton = Globals.Button.new("Play", Globals.Screen.width / 2, Globals.Screen.height / 2, function()
       GameState:changeState("play")
   end)
   
-  exitButton = Globals.Button.new("Exit", love.graphics.getWidth() / 2, (love.graphics.getHeight() / 2) + 100, function()
+  exitButton = Globals.Button.new("Exit", Globals.Screen.width / 2, (Globals.Screen.height / 2) + 100, function()
       love.event.quit()
   end)
 end
@@ -39,7 +39,7 @@ end
 function Menu.draw()
   love.graphics.setColor(Globals.Graphics.Colors.white)
   love.graphics.setFont(Menu.Title.font)
-  love.graphics.printf(Menu.Title.text, 0, 100, love.graphics.getWidth(), "center")
+  love.graphics.printf(Menu.Title.text, Globals.Screen.x, 100, Globals.Screen.width, "center")
   
   playButton:draw()
   exitButton:draw()
