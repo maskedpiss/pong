@@ -7,6 +7,12 @@ function GameOver.onEnter()
       y = 100,
       text = "Game Over!"
   }
+  
+  if Globals.playerOneScore > Globals.playerTwoScore then
+    GameOver.Message.text = "Player One Wins!"
+  else
+    GameOver.Message.text = "Player Two Wins!"
+  end
 end
 
 
