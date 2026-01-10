@@ -3,15 +3,19 @@ local Play = {}
 local playerOne = nil
 local playerTwo = nil
 local gameBall = nil
+local playerOneX = nil
+local playerOneY = nil
+local playerTwoX = nil
+local playerTwoY = nil
 
 function Play.onEnter()
   Globals.Arena = require("src/objs/arena")
   Globals.Arena:load()
   
-  local playerOneX = 50
-  local playerOneY = love.graphics.getHeight() / 2
-  local playerTwoX = love.graphics.getWidth() - 70
-  local playerTwoY = love.graphics.getHeight() / 2
+  playerOneX = 50
+  playerOneY = love.graphics.getHeight() / 2
+  playerTwoX = love.graphics.getWidth() - 70
+  playerTwoY = love.graphics.getHeight() / 2
   
   Globals.Paddle = require("src/objs/paddle")
   playerOne = Globals.Paddle.new(playerOneX, playerOneY)
@@ -69,7 +73,16 @@ end
 
 
 function Play.onExit()
-  
+  Globals.Arena = nil
+  Globals.Paddle = nil
+  Globals.Ball = nil
+  playerOneX = nil
+  playerOneY = nil
+  playerTwoX = nil
+  playerTwoY = nil
+  playerOne = nil
+  playerTwo = nil
+  gameBall = nil
 end
 
 return Play
