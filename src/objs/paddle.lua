@@ -16,7 +16,7 @@ end
 
 function Paddle:update(dt)
   local upKey, downKey
-  local screenCenter = love.graphics.getWidth() / 2
+  local screenCenter = Globals.Screen.width / 2
   
   if self.x < screenCenter then
     upKey = "w"
@@ -34,8 +34,8 @@ function Paddle:update(dt)
   
   if self.y < 0 then
     self.y = 0
-  elseif self.y + self.height > love.graphics.getHeight() then
-    self.y = love.graphics.getHeight() - self.height
+  elseif self.y + self.height > Globals.Screen.height then
+    self.y = Globals.Screen.height - self.height
   end
 end
 
