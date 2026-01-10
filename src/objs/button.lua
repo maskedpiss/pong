@@ -2,6 +2,9 @@ local Button = {}
 
 Button.offset = 87.5
 
+local mouseX, mouseY
+local isHovering
+
 function Button.new(text, x, y, callback)
   local instance = {}
   setmetatable(instance, { __index = Button })
@@ -10,6 +13,7 @@ function Button.new(text, x, y, callback)
   instance.y = y
   instance.width = 175
   instance.height = 75
+  instance.color = Globals.Graphics.Colors.white
   instance.text = text
   
   instance.callback = callback or function() end
@@ -19,7 +23,14 @@ end
 
 
 function Button:update(dt)
+  mouseX, mouseY = love.mouse.getPosition()
+  isHovering = (mouseX > self.x and mouseX < self.x + self.width and mouseY > self.y and mouseY < self.y + self.height)
   
+  if isHovering then
+    self.color = Globals.Graphics.Colors.gray
+  else
+    self.color = Globals.Graphics.Colors.white
+  end
 end
 
 
@@ -39,7 +50,7 @@ end
 
 
 function Button:draw()
-  love.graphics.setColor(Globals.Graphics.Colors.white)
+  love.graphics.setColor(self.color)
   love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
   
   love.graphics.setColor(Globals.Graphics.Colors.black)

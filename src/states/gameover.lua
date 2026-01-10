@@ -34,7 +34,9 @@ end
 
 
 function GameOver.update(dt)
-  
+  menuButton:update(dt)
+  retryButton:update(dt)
+  exitButton:update(dt)
 end
 
 
