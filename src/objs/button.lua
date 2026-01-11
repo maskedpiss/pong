@@ -55,7 +55,7 @@ function Button:draw()
   
   love.graphics.setColor(Globals.Graphics.Colors.black)
   love.graphics.setFont(Globals.Graphics.Fonts.ButtonFont)
-  love.graphics.printf(self.text, self.x, self.y, self.width, "center")
+  love.graphics.printf(self.text, self.x, self.y, self.width, "center", nil, nil, nil, nil, -20)
 end
 
 return Button
