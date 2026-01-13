@@ -39,9 +39,11 @@ function Play.update(dt)
     local collisionPosition
     
     if Globals.Collisions:AABB(gameBall, playerOne) then
+      Globals.Sound:playSound(Globals.Sound.HitPaddle1)
       gameBall.x = playerOne.x + playerOne.width
       collisionPosition = middleBall - middlePaddleOne
     elseif Globals.Collisions:AABB(gameBall, playerTwo) then
+      Globals.Sound:playSound(Globals.Sound.HitPaddle2)
       gameBall.x = playerTwo.x - gameBall.width
       collisionPosition = middleBall - middlePaddleTwo
     end
