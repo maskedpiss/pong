@@ -34,9 +34,19 @@ end
 
 
 function GameOver.update(dt)
+  local mouseX, mouseY = love.mouse.getPosition()
+  
   menuButton:update(dt)
   retryButton:update(dt)
   exitButton:update(dt)
+  
+  if menuButton:isHovering(mouseX, mouseY) or retryButton:isHovering(mouseX, mouseY) or exitButton:isHovering(mouseX, mouseY) then
+    if not Globals.hasPlayed then
+      Globals.Sound:playSound(Globals.Sound.ButtonHover)
+    end
+  else
+    Globals.hasPlayed = false
+  end
 end
 
 
