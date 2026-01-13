@@ -42,6 +42,7 @@ end
 
 function Button:mousepressed(x, y, button)
   if button == 1 and self:isHovering(x, y) then
+    Globals.Sound:playSound(Globals.Sound.ButtonClick)
     self.callback()
     return true
   end
