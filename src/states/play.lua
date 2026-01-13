@@ -59,6 +59,7 @@ function Play.update(dt)
       Globals.playerTwoScore = Globals.playerTwoScore + 1
     end
     
+    Globals.Sound:playSound(Globals.Sound.Goal)
     gameBall:reset()
   end
   
