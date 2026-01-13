@@ -31,11 +31,13 @@ function Ball:update(dt)
   
   if self.y < 0 then
     self.y = 0
+    Globals.Sound:playSound(Globals.Sound.HitCeiling)
     self.yVel = -self.yVel
   end
   
   if self.y + self.height > Globals.Screen.height then
     self.y = Globals.Screen.height - self.height
+    Globals.Sound:playSound(Globals.Sound.HitFloor)
     self.yVel = -self.yVel
   end
 end
