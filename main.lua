@@ -5,6 +5,7 @@ Globals.Ball = nil
 Globals.Button = nil
 Globals.Collisions = require("src/utils/collisions")
 Globals.Graphics = require("src/utils/graphics")
+Globals.Sound = require("src/utils/sound")
 Globals.playerOneScore = 0
 Globals.playerTwoScore = 0
 
@@ -40,6 +41,7 @@ function love.load()
   
   Globals.Graphics:loadGraphics()
   Globals.Graphics:loadFonts()
+  Globals.Sound:loadSound()
   GameState:changeState("menu")
 end
 
