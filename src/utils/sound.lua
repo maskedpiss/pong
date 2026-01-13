@@ -10,4 +10,10 @@ function Sound:loadSound()
   self.Goal = love.audio.newSource("res/sfx/Goal.wav", "static")
 end
 
+
+function Sound:playSound(sound)
+  love.audio.stop()
+  love.audio.play(sound)
+end
+
 return Sound
