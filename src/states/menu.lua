@@ -21,8 +21,18 @@ end
 
 
 function Menu.update(dt)
+  local mouseX, mouseY = love.mouse.getPosition()
+  
   playButton:update(dt)
   exitButton:update(dt)
+  
+  if playButton:isHovering(mouseX, mouseY) or exitButton:isHovering(mouseX, mouseY) then
+    if not Globals.hasPlayed then
+      Globals.Sound:playSound(Globals.Sound.ButtonHover)
+    end
+  else
+    Globals.hasPlayed = false
+  end
 end
 
 
