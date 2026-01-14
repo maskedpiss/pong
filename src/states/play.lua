@@ -32,6 +32,7 @@ function Play.update(dt)
   gameBall:update(dt)
   
   if Globals.Collisions:AABB(gameBall, playerOne) or Globals.Collisions:AABB(gameBall, playerTwo) then
+    gameBall.speed = gameBall.speed + (gameBall.speed * 0.1)
     gameBall.xVel = -gameBall.xVel
     local middleBall = gameBall.y + gameBall.height / 2
     local middlePaddleOne = playerOne.y + playerOne.height / 2
